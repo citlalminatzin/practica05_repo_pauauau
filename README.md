@@ -1,2 +1,2 @@
-# practica05_repo_pauauau
-Repositorio para reposición de la práctica 5  de Paulina Alba Pérez 
+# Práctica 5  Modelos De Similitud Geométrica
+Repositorio para reposición de la práctica 5 de Paulina Alba Pérez 
