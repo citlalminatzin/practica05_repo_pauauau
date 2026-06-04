@@ -1,58 +1,115 @@
 # Reposición de Práctica 5
 
 ## Autor
-Paulina Alba Pérez 
+
+Paulina Alba Pérez
 
 ## Uso e instalación
 
-(Si no eliminas esta línea lloro) Aquí escribe qué necesitas que instale para ejecutar tu código, por ejemplo:
+Para ejecutar el proyecto se requieren las siguientes bibliotecas:
 
-- `matplotlib`
-- `numpy`
+* `matplotlib`
+* `math`
+* `csv`
 
-(Si no eliminas esta línea lloro) Y dime cómo debería ejecutar tu código y en qué orden. Recuerda que antes de ejecutar tu código leeré tu `README.md`. Por ejemplo la manera en la que propongo que organizes tu código es
+### Archivos del proyecto
 
-- `main.py`: Contiene el código para graficar cada uno de los tres ejercicios
-- `` (Por favor modifica esta línea)
-
-## Ejercicio 1
-
-(Por favor modifica esta línea, lo suplico por piedad) Aquí puedes colocar la discusión del modelo, tu interpretación, el efecto de las condiciones iniciales. No tiene que ser perfecto, pero entre más casos puedas cubrir mejor
-
-## Ejercicio 2
-
-(Por favor modifica esta línea, tú puedes yo creo en ti) Puedes darle formato de **negritas**, *itálicas*, incluir texto matemático $x\approx 1, \epsilon > 0$, [enlaces](https://www.markdownguide.org/cheat-sheet/), `código`,
-
-```python
-# Esto es un ejemplo, lo puedes quitar
-print("Código en bloque")
-```
-
-(Si no eliminas esta línea lloro) También puedes incluir citas
-
-> Por favor elimina esta cita
-
-(Si no eliminas esta línea lloro) Puedes incluir notas al pie [^1].
-
-## Ejercicio 3
-
-(Puedes modificar esta línea, su único propósito es existir para ser modificada, cada momento que existe en su forma original llora por no formar parte de la formación de jovenes matemáticas como tú) También se pueden incluir imágenes. Aunque a veces aunque se muestre localmente, no significa que se vaya a mostrar en GitHub. Por ejemplo, adjunto una imagen de una bella rosa:
-
-![Texto alternativo, imagen de la cara de un Mr. Meeseks en fondo azul con la leyenda Existence is Pain por debajo](media/existence_is_pain.jpg)
-
-### También puedes agregar tablas y eliminar este sub encabezado
-
-| Elimíname | Elimíname a mí también |
-| -------------- | --------------- |
-| $1$ | $54$ |
-| $2$ | $1000$ |
-
-(Si no eliminas esta línea lloro) Y luego puedes comentar que con base en la tabla anterior, se ve una explosión en los valores a partir del tiempo $t=2$. 
-
-## Conclusión
-
-(Por favor modifica esta línea bro, es la última que tienes que modificar bro, por favor bro) Es buena práctica concluir tus prácticas. ¿Qué te llevas? ¿Sientes que fue relevante para ti? ¿Se te complicó algún aspecto? ¿Hubo algún resultado que contradijera tu intuición? 
+* `main.py`: Contiene el código principal para generar las gráficas y comparar los modelos.
+* `models.py`: Implementa los modelos matemáticos y las funciones de evaluación.
+* `data.py`: Contiene las funciones para leer y modificar los datos almacenados en el archivo CSV.
 
 ---
 
-[^1]: Sólo soy una nota al pie, elimíname bro, por favor bro.
+## Ejercicio 1
+
+Se estudia la relación entre el peso de un pez y su longitud bajo la hipótesis de similitud geométrica. En este contexto, se propone que el peso es proporcional al cubo de la longitud:
+
+[
+W \propto l^3
+]
+
+### Tabla de datos
+
+| Longitud | Peso |
+| -------- | ---- |
+| 36.81    | 0.78 |
+| 31.77    | 0.47 |
+| 36.81    | 1.16 |
+| 36.82    | 0.74 |
+| 32.07    | 0.44 |
+| 45.07    | 1.40 |
+| 35.89    | 0.64 |
+
+
+A partir de esta relación se observa que pequeñas variaciones en la longitud producen cambios significativamente mayores en el peso. Esto se debe al crecimiento cúbico del modelo, que aproxima cómo aumenta el volumen de un cuerpo cuando todas sus dimensiones se escalan proporcionalmente.
+
+---
+
+## Ejercicio 2: Modelo de similitud geométrica
+
+En este ejercicio se utilizó el modelo de similitud geométrica, el cual asume que el peso de un pez es proporcional al cubo de su longitud:
+
+[
+W \propto l^3
+]
+
+### ¿Qué tan bueno es el ajuste?
+
+La gráfica de dispersión muestra una relación positiva entre las predicciones del modelo y los pesos observados. Esto indica que la longitud es una variable importante para explicar el peso de los peces. Sin embargo, los puntos no se encuentran perfectamente alineados, por lo que el modelo no explica toda la variabilidad presente en los datos.
+
+### ¿Hay algún efecto que nuestro modelo no capture?
+
+Sí. El modelo supone que todos los peces mantienen exactamente la misma forma geométrica al cambiar de tamaño. En la práctica, peces con la misma longitud pueden presentar diferencias en su grosor o anchura, lo que genera variaciones en su peso que no son capturadas únicamente por la longitud.
+
+---
+
+## Ejercicio 3: Modelo con circunferencia máxima
+
+Partiendo de la aproximación del volumen mediante la longitud y el área transversal máxima, se obtuvo el modelo
+
+[
+W \propto lC_{\max}^{2}
+]
+
+donde (l) representa la longitud del pez y (C_{\max}) su circunferencia máxima.
+
+### ¿Cómo queda la fórmula explícita del modelo?
+
+La forma explícita es
+
+[
+W = k,lC_{\max}^{2}
+]
+
+donde (k) es una constante de proporcionalidad que depende de las unidades utilizadas y de la densidad promedio del pez.
+
+### ¿Qué tan bueno es el ajuste?
+
+El modelo que incorpora la circunferencia máxima presenta un mejor ajuste que el modelo basado únicamente en la longitud. Esto se debe a que incluye información adicional sobre el grosor del pez, lo que permite aproximar mejor su volumen y, en consecuencia, su peso.
+
+Visualmente, los puntos se encuentran más cercanos a una relación lineal entre las predicciones y los datos observados. Además, las métricas de evaluación muestran una mejora respecto al modelo geométrico simple.
+
+### Conclusión del ejercicio
+
+La incorporación de la circunferencia máxima permite capturar diferencias de forma entre peces de longitudes similares. Por ello, el modelo
+
+[
+W \propto lC_{\max}^{2}
+]
+
+proporciona una descripción más realista y precisa del peso de los peces que el modelo basado únicamente en
+
+[
+W \propto l^3.
+]
+
+---
+
+## Conclusión
+
+Esta práctica permitió estudiar cómo los principios de similitud geométrica pueden utilizarse para construir modelos matemáticos capaces de predecir propiedades físicas de organismos reales. Además, mostró la importancia de incorporar variables adicionales cuando un modelo resulta demasiado simplificado.
+
+Al comparar ambos enfoques, se observó que incluir información sobre la circunferencia máxima mejora la capacidad predictiva del modelo, ya que captura características de la forma del pez que no pueden describirse únicamente mediante su longitud.
+
+Desde el punto de vista computacional, la práctica también permitió trabajar con lectura de datos, manipulación de archivos CSV, construcción de funciones reutilizables y visualización de resultados mediante gráficas.
+
