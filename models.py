@@ -7,7 +7,7 @@ de los peces como sus longitudes y circunferencias para predecir su peso, así c
 evaluar el ajuste y el error de los modelos propuestos.
 """
 
-import numpy as np
+from math import sqrt
 
 def modelo_geom(longitudes: list[float]) -> list[float]:
     """
@@ -36,18 +36,18 @@ def pearson(x: list[float], y: list[float]) -> float:
         denominador_x += dif_x ** 2
         denominador_y += dif_y ** 2
         
-    denominador_total = math.sqrt(denominador_x * denominador_y)
+    denominador_total = np.sqrt(denominador_x * denominador_y)
     
     return numerador / denominador_total
 
 def modelo_circ(longitudes: list[float], circunferencias: list[float]) -> list[float]:
-    """longitudes: Lista con las medidas de la longitud de los peces en cm. 
-       circunferencias: medidas de la circunferencia de los peces en cm."""
+    """Retorna la transformación l*C^2 utilizada
+    en el modelo basado en la circunferencia máxima."""
 
     return [longitudes[i] * (circunferencias[i]**2) for i in range(len(longitudes))]
 
 
-def calc_error(pred:list[float], truth: list[float]):
+def calc_error(pred:list[float], truth: list[float]) -> float:
     """Calcula el error entre una predicción y la verdad del dataset"""
     n = len(pred)
     suma_errores_cuadrados = 0.0
@@ -58,9 +58,3 @@ def calc_error(pred:list[float], truth: list[float]):
         
     return suma_errores_cuadrados / n
 
-def main():
-    ... # Puedes eliminar esta línea
-
-if __name__ == "__main__":
-    # Si necesitas hacer pruebas de tu función las puedes escribir acá
-    main()
