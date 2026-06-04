@@ -1,5 +1,8 @@
-""" data.py
-Este archivo contiene funciones para leer y escribir datos en un csv, suponen que el csv tiene una estructura específica, 
+""" 
+data.py
+
+
+Este archivo contiene funciones para leer y escribir datos en un csv en particular, suponen que el csv tiene una estructura específica, 
 con columnas de longitud, peso y circunferencia máxima de los peces, y que cada fila corresponde a un pez distinto. 
 
 Estas funciones permiten cargar los datos en listas de Python, así como agregar nuevas columnas al csv si es necesario. 
