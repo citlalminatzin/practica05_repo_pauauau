@@ -16,16 +16,6 @@ def modelo_geom(longitudes: list[float]) -> list[float]:
     """
     return [l**3 for l in longitudes]
 
-def modelo_circ(longitudes: list[float]) -> list[float]:
-    """
-    longitudes: list[float] ¿Qué significa longitudes? 
-    (Por favor elimina la pregunta y reemplazala con su respuesta)
-    ...
-    """
-    ... # Puedes eliminar esta línea
-
-import math
-
 def pearson(x: list[float], y: list[float]) -> float:
     n = len(x)
     
@@ -50,8 +40,23 @@ def pearson(x: list[float], y: list[float]) -> float:
     
     return numerador / denominador_total
 
+def modelo_circ(longitudes: list[float], circunferencias: list[float]) -> list[float]:
+    """longitudes: Lista con las medidas de la longitud de los peces en cm. 
+       circunferencias: medidas de la circunferencia de los peces en cm."""
+
+    return [longitudes[i] * (circunferencias[i]**2) for i in range(len(longitudes))]
+
+
 def calc_error(pred:list[float], truth: list[float]):
     """Calcula el error entre una predicción y la verdad del dataset"""
+    n = len(pred)
+    suma_errores_cuadrados = 0.0
+    
+    for i in range(n):
+        diferencia = pred[i] - truth[i]
+        suma_errores_cuadrados += diferencia ** 2
+        
+    return suma_errores_cuadrados / n
 
 def main():
     ... # Puedes eliminar esta línea
