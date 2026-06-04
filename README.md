@@ -22,11 +22,8 @@ Para ejecutar el proyecto se requieren las siguientes bibliotecas:
 
 ## Ejercicio 1
 
-Se estudia la relación entre el peso de un pez y su longitud bajo la hipótesis de similitud geométrica. En este contexto, se propone que el peso es proporcional al cubo de la longitud:
+Se consideran las siguientes mediciones de longitud y peso de distintos peces. Estos datos serán utilizados para evaluar los modelos propuestos en los ejercicios posteriores.
 
-[
-W \propto l^3
-]
 
 ### Tabla de datos
 
@@ -40,18 +37,15 @@ W \propto l^3
 | 45.07    | 1.40 |
 | 35.89    | 0.64 |
 
-
-A partir de esta relación se observa que pequeñas variaciones en la longitud producen cambios significativamente mayores en el peso. Esto se debe al crecimiento cúbico del modelo, que aproxima cómo aumenta el volumen de un cuerpo cuando todas sus dimensiones se escalan proporcionalmente.
-
 ---
 
 ## Ejercicio 2: Modelo de similitud geométrica
 
 En este ejercicio se utilizó el modelo de similitud geométrica, el cual asume que el peso de un pez es proporcional al cubo de su longitud:
 
-[
-W \propto l^3
-]
+$W \propto l^3$
+
+a partir de esta relación se observa que pequeñas variaciones en la longitud producen cambios significativamente mayores en el peso. Esto se debe al crecimiento cúbico del modelo, que aproxima cómo aumenta el volumen de un cuerpo cuando todas sus dimensiones se escalan proporcionalmente.
 
 ### ¿Qué tan bueno es el ajuste?
 
@@ -59,7 +53,7 @@ La gráfica de dispersión muestra una relación positiva entre las predicciones
 
 ### ¿Hay algún efecto que nuestro modelo no capture?
 
-Sí. El modelo supone que todos los peces mantienen exactamente la misma forma geométrica al cambiar de tamaño. En la práctica, peces con la misma longitud pueden presentar diferencias en su grosor o anchura, lo que genera variaciones en su peso que no son capturadas únicamente por la longitud.
+Si. El modelo supone que todos los peces mantienen exactamente la misma forma geométrica al cambiar de tamaño. En la práctica, peces con la misma longitud pueden presentar diferencias en su grosor o anchura, lo que genera variaciones en su peso que no son capturadas únicamente por la longitud.
 
 ---
 
@@ -67,9 +61,7 @@ Sí. El modelo supone que todos los peces mantienen exactamente la misma forma g
 
 Partiendo de la aproximación del volumen mediante la longitud y el área transversal máxima, se obtuvo el modelo
 
-[
-W \propto lC_{\max}^{2}
-]
+$W \propto lC_{\max}^{2}$
 
 donde (l) representa la longitud del pez y (C_{\max}) su circunferencia máxima.
 
@@ -77,9 +69,7 @@ donde (l) representa la longitud del pez y (C_{\max}) su circunferencia máxima.
 
 La forma explícita es
 
-[
-W = k,lC_{\max}^{2}
-]
+$W = k,lC_{\max}^{2}$
 
 donde (k) es una constante de proporcionalidad que depende de las unidades utilizadas y de la densidad promedio del pez.
 
@@ -93,15 +83,11 @@ Visualmente, los puntos se encuentran más cercanos a una relación lineal entre
 
 La incorporación de la circunferencia máxima permite capturar diferencias de forma entre peces de longitudes similares. Por ello, el modelo
 
-[
-W \propto lC_{\max}^{2}
-]
+$W \propto lC_{\max}^{2}$
 
 proporciona una descripción más realista y precisa del peso de los peces que el modelo basado únicamente en
 
-[
-W \propto l^3.
-]
+$W \propto l^3.$
 
 ---
 
