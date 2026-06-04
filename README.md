@@ -41,9 +41,7 @@ Se consideran las siguientes mediciones de longitud y peso de distintos peces. E
 
 ## Ejercicio 2: Modelo de similitud geométrica
 
-En este ejercicio se utilizó el modelo de similitud geométrica, el cual asume que el peso de un pez es proporcional al cubo de su longitud:
-
-$W \propto l^3$
+En este ejercicio se utilizó el modelo de similitud geométrica, el cual asume que el peso de un pez es proporcional al cubo de su longitud: $W \propto l^3$
 
 a partir de esta relación se observa que pequeñas variaciones en la longitud producen cambios significativamente mayores en el peso. Esto se debe al crecimiento cúbico del modelo, que aproxima cómo aumenta el volumen de un cuerpo cuando todas sus dimensiones se escalan proporcionalmente.
 
@@ -61,15 +59,15 @@ Si. El modelo supone que todos los peces mantienen exactamente la misma forma ge
 
 Partiendo de la aproximación del volumen mediante la longitud y el área transversal máxima, se obtuvo el modelo
 
-$W \propto lC_{\max}^{2}$
+$$W \propto lC_{\max}^{2}$$
 
-donde (l) representa la longitud del pez y (C_{\max}) su circunferencia máxima.
+donde $(l)$ representa la longitud del pez y $(C_{\max})$ su circunferencia máxima.
 
 ### ¿Cómo queda la fórmula explícita del modelo?
 
 La forma explícita es
 
-$W = k,lC_{\max}^{2}$
+$$W = k,lC_{\max}^{2}$$
 
 donde (k) es una constante de proporcionalidad que depende de las unidades utilizadas y de la densidad promedio del pez.
 
@@ -83,11 +81,11 @@ Visualmente, los puntos se encuentran más cercanos a una relación lineal entre
 
 La incorporación de la circunferencia máxima permite capturar diferencias de forma entre peces de longitudes similares. Por ello, el modelo
 
-$W \propto lC_{\max}^{2}$
+$$W \propto lC_{\max}^{2}$$
 
 proporciona una descripción más realista y precisa del peso de los peces que el modelo basado únicamente en
 
-$W \propto l^3.$
+$$W \propto l^3.$$
 
 ---
 
