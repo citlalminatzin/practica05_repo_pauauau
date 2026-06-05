@@ -1,4 +1,4 @@
-# Reposición de Práctica 5
+# Práctica 5
 
 ## Autor
 
